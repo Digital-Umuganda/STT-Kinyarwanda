@@ -85,7 +85,7 @@ $ python -m coqui_stt_training.train \
 	--dev_batch_size 128 \
 	--test_batch_size 128 \
 	--summary_dir data/host_data/tensorboard \
-    --reduce_lr_on_plateau true
+    	--reduce_lr_on_plateau true
 ```
 
 ## Testing
