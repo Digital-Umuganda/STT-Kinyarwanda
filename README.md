@@ -72,6 +72,7 @@ The above command does the following:
 (Assuming we are within the docker environment:)
 
 ```bash
+$ mkdir data/host_data/tensorboard # directory to save the training (loss) results
 $ python -m coqui_stt_training.train \
 	--checkpoint_dir data/host_data/jan-8-2021-best-kinya-deepspeech \
 	--alphabet_config_path data/host_data/kinyarwanda_alphabet.txt \
