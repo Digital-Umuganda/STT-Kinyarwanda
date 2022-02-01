@@ -72,6 +72,7 @@ The above command does the following:
 (Assuming we are within the docker environment:)
 
 ```bash
+$ mkdir data/host_data/tensorboard # directory to save the training (loss) results
 $ python -m coqui_stt_training.train \
 	--checkpoint_dir data/host_data/jan-8-2021-best-kinya-deepspeech \
 	--alphabet_config_path data/host_data/kinyarwanda_alphabet.txt \
@@ -85,7 +86,7 @@ $ python -m coqui_stt_training.train \
 	--dev_batch_size 128 \
 	--test_batch_size 128 \
 	--summary_dir data/host_data/tensorboard \
-    --reduce_lr_on_plateau true
+    	--reduce_lr_on_plateau true
 ```
 
 ## Testing
