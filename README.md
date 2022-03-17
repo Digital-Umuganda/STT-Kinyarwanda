@@ -153,7 +153,7 @@ $ python -m coqui_stt_training.evaluate \
 
 You will usually want to deploy a language model in production. A good language model will improve transcription accuracy by correcting predictable spelling and grammatical mistakes. If you can predict what kind of speech your STT will encounter, you can make great gains in terms of accuracy with a custom language model.
 
-*This section assumes that you are using a Docker image and container for training, as outlined in the [environment](#dockerﬁle-setup-(recommended)) section. If you are not using the Docker image, then some of the scripts such as `generate_lm.py` will not be available in your environment.*
+*This section assumes that you are using a Docker image and container for training, as outlined in the [environment](#dockerﬁle-setup-recommended) section. If you are not using the Docker image, then some of the scripts such as `generate_lm.py` will not be available in your environment.*
 
 *This section assumes that you have already trained an (acoustic) model and have a set of **checkpoints** for that model.*
 
