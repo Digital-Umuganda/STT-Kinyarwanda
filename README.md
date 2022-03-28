@@ -143,8 +143,8 @@ $ python -m coqui_stt_training.evaluate \
     --test_files data/host_data/misc/lg-rw-oct2021/rw/clips/test.csv \
     --checkpoint_dir data/host_data/best-kinya-checkpoint \
     --scorer data/host_data/kinyarwanda_optm.scorer \
-    --lm_alpha 0.6840899155626436 \
-    --lm_beta 1.2497230003074578
+    --lm_alpha 0.7169565760990836 \
+    --lm_beta 1.750652309533554
 ```
 
 
@@ -247,6 +247,31 @@ $ data/lm/generate_scorer_package \
   --lm data/host_data/kinya_lm/lm.binary \
   --vocab data/host_data/kinya_lm/vocab-500000.txt \
   --package data/host_data/kinyarwanda_optm.scorer \
-  --default_alpha 0.6840899155626436 \
-  --default_beta 1.2497230003074578
+  --default_alpha 0.7169565760990836 \
+  --default_beta 1.750652309533554
 ```
+
+
+
+## Export model for deployment
+
+After you train an STT model, your model will be stored on disk as a checkpoint file. Model checkpoints are useful for resuming training at a later date, but they are not the correct format for deploying a model into production. The model format for deployment is a TFLite file.
+
+To export your model as a TFLite file:
+
+```bash
+$ python3 -m coqui_stt_training.export \
+	--show_progressbar true \
+	--checkpoint_dir data/host_data/best-kinya-checkpoint \
+	--export_dir data/host_data \
+	--export_author_id DigitalUmuganda \
+	--export_file_name kinyarwanda_am_lm \
+	--export_model_name kinyarwanda_model \
+	--scorer data/host_data/kinyarwanda_optm.scorer \
+  	--lm_alpha 0.7169565760990836 \
+  	--lm_beta 1.750652309533554
+```
+
+In the above command, we included the trained (and optimized) scorer together with the optimized `alpha` and `beta` values we generated earlier. 
+
+**While this is entirely optional, it helps to generate a better model.**
